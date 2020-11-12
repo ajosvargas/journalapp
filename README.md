@@ -1,1 +1,1 @@
-# Jounral Application
+# Journal Application
