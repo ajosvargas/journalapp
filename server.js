@@ -10,8 +10,10 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 /* Initializing the main project folder */
-app.use(express.static('/'));
+app.use(express.static('journalapp'));
 
+
+// Setting Up Localserver
 const port = 3000;
 
 const server = app.listen(port, () => {console.log(`the server is running in port: ${port}`)});
