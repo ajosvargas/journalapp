@@ -10,10 +10,12 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 /* Initializing the main project folder */
-app.use(express.static('journalapp'));
-
+app.use(express.static('journal'));
 
 // Setting Up Localserver
-const port = 3000;
+const port = 8000;
 
 const server = app.listen(port, () => {console.log(`the server is running in port: ${port}`)});
+
+// Creating Data endpoint for our site
+const appData = {} 
