@@ -1,3 +1,5 @@
+// Creating Data endpoint for our site
+const appData = {};
 // Express to run server and routes 
 const express = require('express');
 // Instantiate web app
@@ -14,8 +16,5 @@ app.use(express.static('journal'));
 
 // Setting Up Localserver
 const port = 8000;
-
 const server = app.listen(port, () => {console.log(`the server is running in port: ${port}`)});
 
-// Creating Data endpoint for our site
-const appData = {} 
