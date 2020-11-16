@@ -7,7 +7,18 @@ let apiKey = '19ef85508db6bc4166420a8141a2c878';
 
 //Date function to include in data being stored into server
 const date = new Date();
-let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
+let newDate = date.getMonth() + '.' + date.getDate() + '.' + date.getFullYear();
+
+// Function to display text
+
+formMessage = id => {
+    let message = document.querySelector(id);
+    message.style.display = 'block';
+
+    setTimeout(() => {
+        message.style.display = 'none';
+    }, 3000)
+} 
 
 document.getElementById('submit').addEventListener('click', getData)
 
@@ -18,7 +29,7 @@ let getData = (e) => {
     const content = document.getElementById('feeling').value;
 
     if (zip === "" || content === "") {
-        console.log('please fill out the fields in order to proceed');
+        formMessage();
     } else {
         getWeather(baseURL, zip, apiKey)
     }
