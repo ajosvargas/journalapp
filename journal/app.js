@@ -32,5 +32,69 @@ function getData (e) {
         formMessage('.fail-messg');
     } else {
         getWeather(baseURL, zip, apiKey)
+
+        .then(function (data) {
+            postData('/add', {date: newDate, temp: data.main.temp, content: content})
+        }).then(function (newData){
+            updateUI()
+        })
+        form.reset();
     }
 }
+
+
+
+
+const getWeather = async (baseURL, info, key)=>{
+    const res = await fetch(baseURL+info+key)
+    try {
+      const data = await res.json();
+      console.log(data)
+      return data;
+    }  catch(err) {
+      if (err.reponse) {
+        } else if (err.request) {
+        } else if ("Notvalid") {
+        } else {
+        console.log(err);
+        }
+    }
+  }
+
+
+
+  const postData = async ( url = '', data = {})=>{
+
+    const response = await fetch(url, {
+    method: 'POST', 
+    credentials: 'same-origin', 
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),     
+  });
+
+    try {
+      const newData = await response.json();
+      return newData;
+    }catch(error) {
+    console.log("error", error);
+    }
+};
+
+
+
+
+
+  const updateUI = async () => {
+    const request = await fetch('/all');
+    try{
+      const allData = await request.json();
+      document.getElementById('').innerHTML = allData.date;
+      document.getElementById('').innerHTML = allData.temp;
+      document.getElementById('').innerHTML = allData.content;
+  
+    }catch(err){
+      console.log("error", err);
+    }
+  }

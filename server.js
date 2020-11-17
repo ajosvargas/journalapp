@@ -14,7 +14,26 @@ app.use(cors());
 /* Initializing the main project folder */
 app.use(express.static('journal'));
 
+app.post('/add', addInfo);
+
+function addInfo(req,res){
+
+  newEntry = {
+    date: req.body.date,
+    temp: req.body.temp,
+    content: req.body.content
+  }
+
+  appData.push(newEntry)
+  console.log(appData)
+}
+
+app.get('/all', getInfo);
+
+function getInfo(req, res) {
+  res.send(projectData);
+}
+
 // Setting Up Localserver
 const port = 8000;
 const server = app.listen(port, () => {console.log(`the server is running in port: ${port}`)});
-
