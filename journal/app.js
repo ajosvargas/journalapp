@@ -66,7 +66,7 @@ const getWeather = async (baseURL, info, key)=>{
         console.log(err);
         }
     }
-  }
+}
 
   /* 
   
@@ -76,7 +76,7 @@ const getWeather = async (baseURL, info, key)=>{
   
   */
 
-  const postData = async ( url = '', data = {})=>{
+const postData = async ( url = '', data = {})=>{
 
     const response = await fetch(url, {
     method: 'POST', 
@@ -85,7 +85,7 @@ const getWeather = async (baseURL, info, key)=>{
         'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),     
-  });
+});
 
     try {
 
@@ -105,7 +105,7 @@ Function to update the UI with server data
 
 */
 
-  const updateUI = async () => {
+const updateUI = async () => {
     const request = await fetch('/all');
     try{
       const allData = await request.json();
@@ -117,4 +117,4 @@ Function to update the UI with server data
     }catch(err){
       console.log("error", err);
     }
-  }
+}
