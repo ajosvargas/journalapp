@@ -75,9 +75,11 @@ const getWeather = async (baseURL, info, key)=>{
   });
 
     try {
+
       const newData = await response.json();
       return newData;
     }catch(error) {
+        
     console.log("error", error);
     }
 };
@@ -90,6 +92,7 @@ const getWeather = async (baseURL, info, key)=>{
     const request = await fetch('/all');
     try{
       const allData = await request.json();
+
       document.getElementById('').innerHTML = allData.date;
       document.getElementById('').innerHTML = allData.temp;
       document.getElementById('').innerHTML = allData.content;
