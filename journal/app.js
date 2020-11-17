@@ -11,7 +11,7 @@ let newDate = date.getMonth() + '.' + date.getDate() + '.' + date.getFullYear();
 
 // Function to display text
 
-formMessage = id => {
+let formMessage = (id) => {
     let message = document.querySelector(id);
     message.style.display = 'block';
 
@@ -22,14 +22,14 @@ formMessage = id => {
 
 document.getElementById('submit').addEventListener('click', getData)
 
-let getData = (e) => {
+function getData (e) {
     e.preventDefault();
 
     const zip = document.getElementById('zip').value;
-    const content = document.getElementById('feeling').value;
+    const content = document.getElementById('feelings').value;
 
     if (zip === "" || content === "") {
-        formMessage();
+        formMessage('.fail-messg');
     } else {
         getWeather(baseURL, zip, apiKey)
     }
