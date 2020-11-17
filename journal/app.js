@@ -1,5 +1,6 @@
 // Global Variables
-const form = document.querySelector('.user_form');
+const textArea = document.querySelector('#zip');
+const input = document.querySelector('.myInput');
 const icons = document.querySelectorAll('.entry__icon')
 // Base URL and KEY for access to the API
 let baseURL = 'api.openweathermap.org/data/2.5/weather?zip=';
@@ -36,11 +37,12 @@ function getData (e) {
         getWeather(baseURL, zip, apiKey)
 
         .then(function (data) {
-            postData('/add', {date: newDate, temp: data.main.temp, content: content})
+            postData('/add', {date: newDate, temp: data.temp, content: content})
         }).then(function (newData){
             updateUI()
         })
-        form.reset();
+        textArea.reset();
+        input.reset();
     }
 }
 

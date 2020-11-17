@@ -30,7 +30,7 @@ body {
     position: absolute;
     margin:auto;
     bottom: 0;
-    top: 20vh;
+    top: 0vh;
     left: 0;
     right: 0;
 }
@@ -94,7 +94,7 @@ body {
     position: absolute;
     margin:auto;
     bottom: 0;
-    top: 60vh;
+    top: 80vh;
     left: 0;
     right: 0;
     width: 31.25rem;
