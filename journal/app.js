@@ -20,6 +20,8 @@ let formMessage = (id) => {
     }, 3000)
 } 
 
+// Aysnc function that populates data
+
 document.getElementById('submit').addEventListener('click', getData)
 
 function getData (e) {
@@ -42,8 +44,13 @@ function getData (e) {
     }
 }
 
+/* 
 
 
+Function to get data from API
+
+
+*/
 
 const getWeather = async (baseURL, info, key)=>{
     const res = await fetch(baseURL+info+key)
@@ -61,7 +68,13 @@ const getWeather = async (baseURL, info, key)=>{
     }
   }
 
-
+  /* 
+  
+  
+ Post data Function 
+  
+  
+  */
 
   const postData = async ( url = '', data = {})=>{
 
@@ -79,23 +92,27 @@ const getWeather = async (baseURL, info, key)=>{
       const newData = await response.json();
       return newData;
     }catch(error) {
-        
+
     console.log("error", error);
     }
 };
 
+/* 
 
 
+Function to update the UI with server data
 
+
+*/
 
   const updateUI = async () => {
     const request = await fetch('/all');
     try{
       const allData = await request.json();
 
-      document.getElementById('').innerHTML = allData.date;
-      document.getElementById('').innerHTML = allData.temp;
-      document.getElementById('').innerHTML = allData.content;
+      document.getElementById('date').innerHTML = allData.date;
+      document.getElementById('temp').innerHTML = allData.temp;
+      document.getElementById('content').innerHTML = allData.content;
   
     }catch(err){
       console.log("error", err);
