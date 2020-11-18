@@ -1,7 +1,6 @@
 // Global Variables
 const textArea = document.querySelector('#zip');
 const input = document.querySelector('.myInput');
-const icons = document.querySelectorAll('.entry__icon')
 // Base URL and KEY for access to the API
 let baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 let apiKey = '19ef85508db6bc4166420a8141a2c878';
