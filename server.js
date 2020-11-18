@@ -17,6 +17,7 @@ app.use(express.static('journal'));
 app.post('/add', addInfo);
 
 function addInfo(req,res){
+  const body = req.body;
 
   newEntry = {
     date: req.body.date,
