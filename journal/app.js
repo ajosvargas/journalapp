@@ -1,3 +1,6 @@
+// Universal Variables
+const form = document.querySelector('.userForm');
+
 // Base URL and KEY for access to the API
 let baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 let apiKey = '19ef85508db6bc4166420a8141a2c878';
@@ -37,6 +40,7 @@ function getData (e) {
         }).then(function (newData){
             updateUI()
         })
+        form.reset();
     }
 }
 
@@ -52,7 +56,6 @@ const getWeather = async (baseURL, info, key)=>{
     const res = await fetch(baseURL+info+'&appid='+key)
     try {
       const data = await res.json();
-      console.log(data)
       return data;
     }  catch(err) {
       if (err.reponse) {
@@ -106,9 +109,18 @@ const updateUI = async () => {
     try{
       const allData = await request.json();
 
-      document.getElementById('date').innerHTML = allData[0].date;
-      document.getElementById('temp').innerHTML = allData[0].temp;
-      document.getElementById('content').innerHTML = allData[0].content;
+        let tempConversion = (temprature) => {
+        let kelvin = temprature
+        let conversion = Math.round((kelvin - 273.15)*9/5+32);
+        
+
+        allData[0].temp = conversion;
+    }
+
+      tempConversion(allData[0].temp);
+      document.getElementById('date').innerHTML = 'Date: ' + allData[0].date;
+      document.getElementById('temp').innerHTML = 'Temp: ' + allData[0].temp+'&#8457;';
+      document.getElementById('content').innerHTML = 'How are you feeling: ' + allData[0].content;
   
     }catch(err){
       console.log("error", err);
