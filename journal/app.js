@@ -3,7 +3,7 @@ const form = document.querySelector('.userForm');
 
 // Base URL and KEY for access to the API
 let baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
-let apiKey = '19ef85508db6bc4166420a8141a2c878';
+let apiKey = '&appid=19ef85508db6bc4166420a8141a2c878&units=imperial';
 
 //Date function to include in data being stored into server
 let date = new Date();
@@ -22,7 +22,7 @@ let formMessage = (id) => {
 
 // Aysnc function that populates data
 
-document.getElementById('submit').addEventListener('click', getData)
+document.getElementById('generate').addEventListener('click', getData)
 
 function getData (e) {
     e.preventDefault();
@@ -53,7 +53,7 @@ Function to get data from API
 */
 
 const getWeather = async (baseURL, info, key)=>{
-    const res = await fetch(baseURL+info+'&appid='+key)
+    const res = await fetch(baseURL+info+key)
     try {
       const data = await res.json();
       return data;
@@ -83,7 +83,11 @@ const postData = async ( url = '', data = {})=>{
     headers: {
         'Content-Type': 'application/json',
     },
-    body: JSON.stringify(data),     
+    body: JSON.stringify({
+      date: data.date,
+      temp: data.temp,
+      content: data.content
+    }),     
 });
 
     try {
@@ -114,13 +118,13 @@ const updateUI = async () => {
         let conversion = Math.round((kelvin - 273.15)*9/5+32);
         
 
-        allData[0].temp = conversion;
+        allData.temp = conversion;
     }
 
-      tempConversion(allData[0].temp);
-      document.getElementById('date').innerHTML = 'Date: ' + allData[0].date;
-      document.getElementById('temp').innerHTML = 'Temp: ' + allData[0].temp+'&#8457;';
-      document.getElementById('content').innerHTML = 'How are you feeling: ' + allData[0].content;
+      tempConversion(allData.temp);
+      document.getElementById('date').innerHTML = 'Date: ' + allData.date;
+      document.getElementById('temp').innerHTML = 'Temp: ' + allData.temp+'&#8457;';
+      document.getElementById('content').innerHTML = 'How are you feeling: ' + allData.content;
   
     }catch(err){
       console.log("error", err);
