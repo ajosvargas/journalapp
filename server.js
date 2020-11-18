@@ -14,12 +14,11 @@ app.use(cors());
 /* Initializing the main project folder */
 app.use(express.static('journal'));
 
+const data = [];
 app.post('/add', addInfo);
 
 function addInfo(req,res){
-
-  let data = request.body;
-
+  
   projectData["date"] = data.date;
   projectData["temp"] = data.temp;
   projectData["content"] = data.content;
