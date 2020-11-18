@@ -106,9 +106,9 @@ const updateUI = async () => {
     try{
       const allData = await request.json();
 
-      document.getElementById('date').innerHTML = allData.date;
-      document.getElementById('temp').innerHTML = allData.temp;
-      document.getElementById('content').innerHTML = allData.content;
+      document.getElementById('date').innerHTML = allData[0].date;
+      document.getElementById('temp').innerHTML = allData[0].temp;
+      document.getElementById('content').innerHTML = allData[0].content;
   
     }catch(err){
       console.log("error", err);
