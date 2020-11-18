@@ -2,8 +2,8 @@
 const form = document.querySelector('.userForm');
 
 // Base URL and KEY for access to the API
-let baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
-let apiKey = '&appid=19ef85508db6bc4166420a8141a2c878&units=imperial';
+const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
+const apiKey = '&appid=19ef85508db6bc4166420a8141a2c878&units=imperial';
 
 //Date function to include in data being stored into server
 let date = new Date();
