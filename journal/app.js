@@ -55,7 +55,7 @@ Function to get data from API
 */
 
 const getWeather = async (baseURL, info, key)=>{
-    const res = await fetch(baseURL+info+key)
+    const res = await fetch(baseURL+info+'&appid='+key)
     try {
       const data = await res.json();
       console.log(data)
