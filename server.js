@@ -1,5 +1,5 @@
 // Creating Data endpoint for our site
-const appData = {};
+const appData = [];
 // Express to run server and routes 
 const express = require('express');
 // Instantiate web app
@@ -31,7 +31,7 @@ function addInfo(req,res){
 app.get('/all', getInfo);
 
 function getInfo(req, res) {
-  res.send(projectData);
+  res.send(appData);
 }
 
 // Setting Up Localserver

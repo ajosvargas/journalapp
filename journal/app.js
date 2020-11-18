@@ -3,11 +3,11 @@ const textArea = document.querySelector('#zip');
 const input = document.querySelector('.myInput');
 const icons = document.querySelectorAll('.entry__icon')
 // Base URL and KEY for access to the API
-let baseURL = 'api.openweathermap.org/data/2.5/weather?zip=';
+let baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 let apiKey = '19ef85508db6bc4166420a8141a2c878';
 
 //Date function to include in data being stored into server
-const date = new Date();
+let date = new Date();
 let newDate = date.getMonth() + '.' + date.getDate() + '.' + date.getFullYear();
 
 // Function to display text
@@ -37,7 +37,7 @@ function getData (e) {
         getWeather(baseURL, zip, apiKey)
 
         .then(function (data) {
-            postData('/add', {date: newDate, temp: data.temp, content: content})
+            postData('/add', {date: newDate, temp: data.main.temp, content: content})
         }).then(function (newData){
             updateUI()
         })
