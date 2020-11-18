@@ -83,11 +83,7 @@ const postData = async ( url = '', data = {})=>{
     headers: {
         'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      date: data.date,
-      temp: data.temp,
-      content: data.content
-    }),     
+    body: JSON.stringify(data),     
 });
 
     try {
