@@ -110,8 +110,8 @@ const updateUI = async () => {
       const allData = await request.json();
 
         let tempConversion = (temprature) => {
-        let kelvin = temprature
-        let conversion = Math.round((kelvin - 273.15)*9/5+32);
+        let farenheit = temprature
+        let conversion = Math.round(farenheit);
         
 
         allData[0].temp = conversion;
