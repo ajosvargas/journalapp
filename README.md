@@ -31,4 +31,4 @@ The server was built using node.js and the express framework. We also use the bo
 
 ## Running 
 
-In order to run this page just click of the link here [landing page](https://ajosvargas.github.io/respnosive-landing-page/), or clone the repo and open the `index.html` file on your browser.
+In order to run this project you must install node onto your local machine using the command line. You can also install express, body-parser, and cors. After that you can clone the repo and open in your code editor.
