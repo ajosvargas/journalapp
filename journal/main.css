@@ -18,7 +18,7 @@ body {
     color:whitesmoke;
 }
 
-#app {
+.app {
     font-family: inherit;
 }
 
@@ -105,7 +105,15 @@ body {
 label {
     display:block;
     font-size: 27px;
-    margin-left: 60px;
+    margin-left: 70px;
+}
+
+.zip-code{
+    margin-left: 120px;
+}
+
+#zip {
+    margin-left: 80px;
 }
 
 input {
