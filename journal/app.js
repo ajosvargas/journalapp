@@ -114,13 +114,13 @@ const updateUI = async () => {
         let conversion = Math.round((kelvin - 273.15)*9/5+32);
         
 
-        allData.temp = conversion;
+        allData[0].temp = conversion;
     }
 
-      tempConversion(allData.temp);
-      document.getElementById('date').innerHTML = 'Date: ' + allData.date;
-      document.getElementById('temp').innerHTML = 'Temp: ' + allData.temp+'&#8457;';
-      document.getElementById('content').innerHTML = 'How are you feeling: ' + allData.content;
+      tempConversion(allData[0].temp);
+      document.getElementById('date').innerHTML = 'Date: ' + allData[0].date;
+      document.getElementById('temp').innerHTML = 'Temp: ' + allData[0].temp+'&#8457;';
+      document.getElementById('content').innerHTML = 'How are you feeling: ' + allData[0].content;
   
     }catch(err){
       console.log("error", err);
