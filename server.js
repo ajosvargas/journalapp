@@ -1,5 +1,5 @@
 // Creating Data endpoint for our site
-const appData = [];
+const projectData = {};
 // Express to run server and routes 
 const express = require('express');
 // Instantiate web app
@@ -17,21 +17,19 @@ app.use(express.static('journal'));
 app.post('/add', addInfo);
 
 function addInfo(req,res){
+  const body = req.body;
 
-  newEntry = {
-    date: req.body.date,
-    temp: req.body.temp,
-    content: req.body.content
-  }
-
-  appData.unshift(newEntry)
-  console.log(appData)
+  projectData.temp = req.body.temp;
+  projectData.date = req.body.date;
+  projectData.content = req.body.content;
+  
+  console.log(projectData);
 }
 
 app.get('/all', getInfo);
 
 function getInfo(req, res) {
-  res.send(appData);
+  res.send(projectData);
 }
 
 // Setting Up Localserver

@@ -113,14 +113,13 @@ const updateUI = async () => {
         let farenheit = temprature
         let conversion = Math.round(farenheit);
         
-
-        allData[0].temp = conversion;
+        allData.temp = conversion;
     }
 
-      tempConversion(allData[0].temp);
-      document.getElementById('date').innerHTML = 'Date: ' + allData[0].date;
-      document.getElementById('temp').innerHTML = 'Temp: ' + allData[0].temp+'&#8457;';
-      document.getElementById('content').innerHTML = 'How are you feeling: ' + allData[0].content;
+      tempConversion(allData.temp);
+      document.getElementById('date').innerHTML = 'Date: ' + allData.date;
+      document.getElementById('temp').innerHTML = 'Temp: ' + allData.temp+'&#8457;';
+      document.getElementById('content').innerHTML = 'How are you feeling: ' + allData.content;
   
     }catch(err){
       console.log("error", err);
