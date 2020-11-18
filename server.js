@@ -24,7 +24,7 @@ function addInfo(req,res){
     content: req.body.content
   }
 
-  appData.push(newEntry)
+  appData.unshift(newEntry)
   console.log(appData)
 }
 
