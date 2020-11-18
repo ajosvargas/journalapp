@@ -22,7 +22,7 @@ let formMessage = (id) => {
 
 // Aysnc function that populates data
 
-document.getElementById('generate').addEventListener('click', getData)
+document.getElementById('submit').addEventListener('click', getData)
 
 function getData (e) {
     e.preventDefault();
