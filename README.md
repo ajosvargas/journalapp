@@ -19,7 +19,7 @@ The index.html file contains the skeleton to manipulate the elements as well as 
 
 ## App
 
-This is where the functionality is contained. We use javascript validation in order to see if the user has input all the data and fire a function if that is the case. With async promises we capture user data as well as fetch API data and store it in our node server. 
+I use javascript validation in order to see if the user has input all the data and fire a function if that is the case. With async promises we capture user data as well as fetch API data and store it in our node server. 
 
 ## Styles
 
