@@ -8,6 +8,7 @@
 * [Styles.css](#style)
 * [Server.js](#server)
 * [Running](#running)
+* [Snapshot](#snapshot) 
 
 ## Instructions
 
@@ -32,3 +33,7 @@ The server was built using node.js and the express framework. We also use the bo
 ## Running 
 
 In order to run this project you must install node onto your local machine using the command line. You can also install express, body-parser, and cors. After that you can clone the repo and open in your code editor.
+
+## Snapshot
+
+![screenshot of project](journal/images/screenshot.png) 
